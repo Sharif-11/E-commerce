@@ -1,6 +1,6 @@
-import { ProductProps } from "../Interfaces/products";
+import { CartProductProps } from "../Interfaces/products";
 
-const CartItem = ({ id, name, price, url }: ProductProps) => {
+const CartItem = ({ id, name, price, url, quantity }: CartProductProps) => {
   return (
     <li className="flex py-6">
       <div className="size-24 shrink-0 overflow-hidden rounded-md border border-gray-200">
@@ -13,7 +13,7 @@ const CartItem = ({ id, name, price, url }: ProductProps) => {
             <h3>
               <a href="#">{name}</a>
             </h3>
-            <p className="ml-4">{price}</p>
+            <p className="ml-4">${price}</p>
           </div>
         </div>
         <div className="flex flex-1 items-end justify-between text-sm">
@@ -24,7 +24,7 @@ const CartItem = ({ id, name, price, url }: ProductProps) => {
             >
               +
             </button>
-            <p className="text-gray-500 p-2">1</p>
+            <p className="text-gray-500 p-2">{quantity}</p>
             <button
               type="button"
               className="font-medium text-indigo-600 hover:text-indigo-500 p-2 btn btn-sm"

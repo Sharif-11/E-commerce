@@ -26,3 +26,6 @@ export interface ProductProps {
   name: string;
   price: number;
 }
+export interface CartProductProps extends ProductProps {
+  quantity: number;
+}
