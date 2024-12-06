@@ -1,8 +1,17 @@
+import { useContext } from "react";
 import { useNavigate } from "react-router";
+import { CartContext } from "../Contexts/CartContext";
 import CartItems from "./CartItems";
 
 const Cart = () => {
   const navigate = useNavigate();
+  const [cart] = useContext(CartContext);
+  const computeTotalCost = () => {
+    return cart.reduce(
+      (acc, product) => acc + product.price * product.quantity,
+      0
+    );
+  };
   const handleClose = () => {
     navigate("/");
   };
@@ -66,7 +75,7 @@ const Cart = () => {
                 <div className="border-t border-gray-200 px-4 py-6 sm:px-6">
                   <div className="flex justify-between text-base font-medium text-gray-900">
                     <p>Subtotal</p>
-                    <p>$262.00</p>
+                    <p>${computeTotalCost()}</p>
                   </div>
 
                   <div className="mt-6">

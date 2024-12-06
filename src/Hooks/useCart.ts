@@ -3,6 +3,7 @@ import { CartContext } from "../Contexts/CartContext";
 
 const useCart = (id: number) => {
   const [cart, setCart] = useContext(CartContext);
+
   const removeItem = () => {
     const filteredCart = cart.filter((product) => product.id !== id);
     setCart(filteredCart);
@@ -31,6 +32,10 @@ const useCart = (id: number) => {
       setCart(updatedCart);
     }
   };
-  return { removeItem, increaseQuantity, decreaseQuantity };
+  return {
+    removeItem,
+    increaseQuantity,
+    decreaseQuantity,
+  };
 };
 export default useCart;

@@ -1,7 +1,10 @@
+import { useContext } from "react";
 import { NavLink } from "react-router";
+import { CartContext } from "../Contexts/CartContext";
 import CartIconWithBadge from "./CartIcon";
 
 const Header = () => {
+  const [cart] = useContext(CartContext);
   return (
     <div className="navbar bg-[rgb(135,89,78)] sticky top-0 z-[5]">
       <div className="flex-1">
@@ -18,7 +21,7 @@ const Header = () => {
           </li>
           <li className="bg-transparent focus:bg-transparent">
             <NavLink to="/cart" className="text-white">
-              <CartIconWithBadge itemCount={0} />
+              <CartIconWithBadge itemCount={cart.length} />
             </NavLink>
           </li>
         </ul>
