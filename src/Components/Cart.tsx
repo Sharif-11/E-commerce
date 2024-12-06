@@ -5,7 +5,7 @@ import CartItems from "./CartItems";
 
 const Cart = () => {
   const navigate = useNavigate();
-  const [cart] = useContext(CartContext);
+  const [cart, setCart] = useContext(CartContext);
   const computeTotalCost = () => {
     return cart.reduce(
       (acc, product) => acc + product.price * product.quantity,
@@ -74,17 +74,17 @@ const Cart = () => {
 
                 <div className="border-t border-gray-200 px-4 py-6 sm:px-6">
                   <div className="flex justify-between text-base font-medium text-gray-900">
-                    <p>Subtotal</p>
-                    <p>${computeTotalCost()}</p>
+                    <p className="font-bold">Subtotal</p>
+                    <p className="font-bold">${computeTotalCost()}</p>
                   </div>
 
                   <div className="mt-6">
-                    <a
-                      href="#"
-                      className="flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-indigo-700"
+                    <button
+                      onClick={() => setCart([])}
+                      className="flex items-center justify-center rounded-md border border-transparent w-[100%] bg-indigo-600 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-indigo-700"
                     >
-                      Checkout
-                    </a>
+                      Clear Cart
+                    </button>
                   </div>
                 </div>
               </div>

@@ -2,19 +2,15 @@ import axios from "axios";
 import { Product, ProductBody } from "../Interfaces/products";
 import { generateRandomPrice } from "../Utils/randomPricegenerator";
 
-export const fetchProductsBody = async () => {
-  const result = axios.get("https://jsonplaceholder.typicode.com/posts");
+export const fetchData = async (url: string) => {
+  const result = axios.get(url);
   const data = (await result).data;
   return data;
 };
-export const fetchProductsImage = async () => {
-  const result = axios.get("https://jsonplaceholder.typicode.com/photos");
-  const data = (await result).data;
-  return data;
-};
+
 export const fetchProducts = async () => {
-  const products = fetchProductsBody();
-  const images = fetchProductsImage();
+  const products = fetchData("https://jsonplaceholder.typicode.com/posts");
+  const images = fetchData("https://jsonplaceholder.typicode.com/photos");
 
   const productDetails = await Promise.all([products, images]);
   const result: Product[] = [];
