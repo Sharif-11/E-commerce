@@ -15,7 +15,7 @@ const Product = ({
         <img src={url} alt={name} />
       </figure>
       <div className="card-body">
-        <h2 className="card-title">{name}</h2>
+        <h2 className="card-title">{name.substring(0, 16)}</h2>
         <h4 className="font-bold">Price: ${price}</h4>
         <div className="card-actions justify-end">
           <button className="btn btn-primary">Add To Cart</button>
