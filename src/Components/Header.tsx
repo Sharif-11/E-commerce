@@ -1,4 +1,5 @@
 import { NavLink } from "react-router";
+import CartIconWithBadge from "./CartIcon";
 
 const Header = () => {
   return (
@@ -9,7 +10,7 @@ const Header = () => {
         </NavLink>
       </div>
       <div className="flex-none font-bold text-white">
-        <ul className="menu menu-horizontal px-8 ">
+        <ul className="menu menu-horizontal px-12 gap-2">
           <li className="bg-transparent">
             <NavLink to="/products" className="text-white">
               Product List
@@ -17,7 +18,7 @@ const Header = () => {
           </li>
           <li className="bg-transparent focus:bg-transparent">
             <NavLink to="/cart" className="text-white">
-              Cart
+              <CartIconWithBadge itemCount={2} />
             </NavLink>
           </li>
         </ul>
