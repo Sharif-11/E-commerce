@@ -22,6 +22,7 @@ const Products = () => {
             name={product.title}
             price={product.price}
             url={product.url}
+            id={product.id}
           />
         ))}
       </div>

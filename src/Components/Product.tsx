@@ -1,10 +1,7 @@
-interface ProductProps {
-  url: string;
-  name: string;
-  price: number;
-}
+import { ProductProps } from "../Interfaces/products";
 
 const Product = ({
+  id,
   name,
   price,
   url = "https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp",

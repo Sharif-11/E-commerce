@@ -17,3 +17,12 @@ export interface Product {
   price: number;
   url: string;
 }
+export interface CartProduct extends Product {
+  quantity: number;
+}
+export interface ProductProps {
+  id: number;
+  url: string;
+  name: string;
+  price: number;
+}

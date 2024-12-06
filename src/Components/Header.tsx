@@ -3,7 +3,7 @@ import CartIconWithBadge from "./CartIcon";
 
 const Header = () => {
   return (
-    <div className="navbar bg-[rgb(135,89,78)]">
+    <div className="navbar bg-[rgb(135,89,78)] sticky top-0 z-[5]">
       <div className="flex-1">
         <NavLink to="/" className="btn btn-ghost text-xl text-white font-bold">
           E-commerce
