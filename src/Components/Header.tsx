@@ -9,13 +9,13 @@ const Header = () => {
         </NavLink>
       </div>
       <div className="flex-none font-bold text-white">
-        <ul className="menu menu-horizontal px-1">
-          <li>
+        <ul className="menu menu-horizontal px-8 ">
+          <li className="bg-transparent">
             <NavLink to="/products" className="text-white">
               Product List
             </NavLink>
           </li>
-          <li>
+          <li className="bg-transparent focus:bg-transparent">
             <NavLink to="/cart" className="text-white">
               Cart
             </NavLink>
