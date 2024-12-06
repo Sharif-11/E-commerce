@@ -18,7 +18,7 @@ const Header = () => {
           </li>
           <li className="bg-transparent focus:bg-transparent">
             <NavLink to="/cart" className="text-white">
-              <CartIconWithBadge itemCount={2} />
+              <CartIconWithBadge itemCount={0} />
             </NavLink>
           </li>
         </ul>
