@@ -1,16 +1,16 @@
 import useProducts from "../Hooks/useProducts";
+import Error from "./Error";
+import LoadingBar from "./LoadingBar";
 import Product from "./Product";
 
 const Products = () => {
   const { products, loading, error } = useProducts();
   console.log({ products });
   if (loading) {
-    return (
-      <span className="loading loading-bars loading-xl m-8 flex justify-center mx-auto"></span>
-    );
+    return <LoadingBar />;
   }
   if (error) {
-    return <div className="my-8 mx-5">Error: {error}</div>;
+    return <Error error={error} />;
   }
   return (
     <div className="my-8 mx-5">

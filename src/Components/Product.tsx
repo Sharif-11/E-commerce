@@ -20,7 +20,10 @@ const Product = ({
     }
   };
   return (
-    <div className="card card-compact bg-base-100 w-[250px] shadow-xl">
+    <div
+      className="card card-compact bg-base-100 w-[250px] shadow-xl"
+      role="product"
+    >
       <figure>
         <img src={url} alt={name} />
       </figure>
