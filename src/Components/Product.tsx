@@ -14,9 +14,15 @@ const Product = ({
     if (!isExist) {
       setCart([...cart, { id, title: name, price, url, quantity: 1 }]);
     } else {
-      const filteredCart = cart.filter((product) => product.id !== id);
-      const updatedProduct = { ...isExist, quantity: isExist.quantity + 1 };
-      setCart([...filteredCart, updatedProduct]);
+      // const filteredCart = cart.filter((product) => product.id !== id);
+      // const updatedProduct = { ...isExist, quantity: isExist.quantity + 1 };
+      // setCart([...filteredCart, updatedProduct]);
+      const updatedCart = cart.map((product) =>
+        product.id === id
+          ? { ...product, quantity: product.quantity + 1 }
+          : product
+      );
+      setCart(updatedCart);
     }
   };
   return (
@@ -31,7 +37,12 @@ const Product = ({
         <h2 className="card-title">{name.substring(0, 16)}</h2>
         <h4 className="font-bold">Price: ${price}</h4>
         <div className="card-actions justify-end">
-          <button className="btn btn-primary" onClick={addToCart}>
+          <button
+            className="btn btn-primary"
+            onClick={addToCart}
+            role="button"
+            name="add to cart"
+          >
             Add To Cart
           </button>
         </div>
