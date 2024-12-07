@@ -25,6 +25,7 @@ const Cart = () => {
       <div
         className="fixed inset-0 bg-gray-500/75 transition-opacity"
         aria-hidden="true"
+        onClick={handleClose}
       ></div>
 
       <div className="fixed inset-0 overflow-hidden">
@@ -75,10 +76,12 @@ const Cart = () => {
                 <div className="border-t border-gray-200 px-4 py-6 sm:px-6">
                   <div className="flex justify-between text-base font-medium text-gray-900">
                     <p className="font-bold">Subtotal</p>
-                    <p className="font-bold">${computeTotalCost()}</p>
+                    <p className="font-bold" role="total-price">
+                      ${computeTotalCost()}
+                    </p>
                   </div>
 
-                  <div className="mt-6">
+                  <div className="mt-6 mb-2">
                     <button
                       onClick={() => setCart([])}
                       className="flex items-center justify-center rounded-md border border-transparent w-[100%] bg-indigo-600 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-indigo-700"

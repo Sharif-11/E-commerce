@@ -4,7 +4,7 @@ import { CartProductProps } from "../Interfaces/products";
 const CartItem = ({ id, name, price, url, quantity }: CartProductProps) => {
   const { removeItem, increaseQuantity, decreaseQuantity } = useCart(id);
   return (
-    <li className="flex py-6">
+    <li className="flex py-6" role="cart-item">
       <div className="size-24 shrink-0 overflow-hidden rounded-md border border-gray-200">
         <img src={url} alt={name} className="size-full object-cover" />
       </div>
@@ -22,6 +22,7 @@ const CartItem = ({ id, name, price, url, quantity }: CartProductProps) => {
           <div className="flex gap-2 flex-wrap">
             <button
               type="button"
+              role="increase"
               onClick={increaseQuantity}
               className="font-medium text-indigo-600 hover:text-indigo-500 p-2 btn btn-sm"
             >
@@ -30,6 +31,7 @@ const CartItem = ({ id, name, price, url, quantity }: CartProductProps) => {
             <p className="text-gray-500 p-2">{quantity}</p>
             <button
               type="button"
+              role="decrease"
               onClick={decreaseQuantity}
               className="font-medium text-indigo-600 hover:text-indigo-500 p-2 btn btn-sm"
             >
@@ -41,6 +43,7 @@ const CartItem = ({ id, name, price, url, quantity }: CartProductProps) => {
             <button
               type="button"
               onClick={removeItem}
+              role="remove"
               className="font-medium text-indigo-600 hover:text-indigo-500"
             >
               Remove
